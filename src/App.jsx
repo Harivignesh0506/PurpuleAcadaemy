@@ -1,0 +1,28 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Nav from "./Components/Header"; // Ensure the path is correct
+import Dash from "./Components/Dash";
+import Thankyou from "./Components/Thankyou";
+import AllCourses from "./Components/AllCourses";
+import BackendNode from "./Components/BackendNode";
+import CourseDetails from "./Components/CourseDetails"
+import CoreJava from './Components/CoreJava'
+
+
+function App() {
+  return (
+    <Router>
+      <Nav /> {/* Navigation should be inside the Router */}
+      <Routes>
+        <Route path="/" element={<Dash />} />
+        <Route path="/thankyou" element={<Thankyou />} />
+        <Route path="/all-courses" element={<AllCourses />} />
+        <Route path="/course/:name" element={<CourseDetails />} />
+        <Route path="/backend-node" element={<BackendNode />} />
+        <Route path="/core-java" element={<CoreJava />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;

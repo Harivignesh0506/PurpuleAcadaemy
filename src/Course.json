@@ -1,0 +1,41 @@
+[
+    {
+      "name": "Backend (NodeJS)",
+      "date": "30th September 2024",
+      "link": "#",
+      "img": "https://purpleacademy-be.s3.ap-south-1.amazonaws.com/1683100187154_Node.webp",
+      "para":"Learn Node.js by building real applications with Node JS, Express, and MongoDB",
+      "skillstitile":"Tools and skills you may learn"
+    },
+    {
+        "name": "Core Java",
+        "date": "30th September 2024",
+        "link": "#",
+        "img": "https://purpleacademy-be.s3.ap-south-1.amazonaws.com/1683100148520_Java.webp"
+      },
+      {
+        "name": "Software Quality Assurance",
+        "date": "30th September 2024",
+        "link": "#",
+        "img": "https://purpleacademy-be.s3.ap-south-1.amazonaws.com/1683100231519_Software%20Quality%20Assurance.webp"
+      },
+      {
+        "name": "DevOps and Cloud Computing",
+        "date": "30th September 2024",
+        "link": "#",
+        "img": "https://purpleacademy-be.s3.ap-south-1.amazonaws.com/1683099527852_DevOps%20and%20Cloud%20Computing.webp"
+      }, 
+      {
+        "name": "UI / UX",
+        "date": "30th September 2024",
+        "link": "#",
+        "img": "https://purpleacademy-be.s3.ap-south-1.amazonaws.com/1683100427319_UIUX.webp"
+      },
+      {
+        "name": "Frontend (ReactJS)",
+        "date": "30th September 2024",
+        "link": "#",
+        "img": "https://purpleacademy-be.s3.ap-south-1.amazonaws.com/1683100090214_Frontend%20-%20ReactJS.webp"
+      }
+      
+  ]
