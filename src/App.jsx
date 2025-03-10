@@ -4,9 +4,10 @@ import Nav from "./Components/Header"; // Ensure the path is correct
 import Dash from "./Components/Dash";
 import Thankyou from "./Components/Thankyou";
 import AllCourses from "./Components/AllCourses";
-import BackendNode from "./Components/BackendNode";
+// import BackendNode from "./Components/BackendNode";
 import CourseDetails from "./Components/CourseDetails"
 import CoreJava from './Components/CoreJava'
+import Testimonials from './Components/Testimonials'
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
         <Route path="/thankyou" element={<Thankyou />} />
         <Route path="/all-courses" element={<AllCourses />} />
         <Route path="/course/:name" element={<CourseDetails />} />
-        <Route path="/backend-node" element={<BackendNode />} />
+        {/* <Route path="/backend-node" element={<BackendNode />} /> */}
+        <Route path="/Testimonials" element={<Testimonials/>}></Route>
         <Route path="/core-java" element={<CoreJava />} />
       </Routes>
     </Router>

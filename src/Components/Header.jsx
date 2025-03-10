@@ -44,9 +44,13 @@ const Nav = () => {
             </button>
           </li>
           <li>
-            <a href="#" className="hover:text-[#7c269b] hover:bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)] hover:border-b-2 border-[#7c269b]">
+          <button 
+              onClick={() => navigate("/Testimonials")} 
+              className={`${
+                isActive("/Testimonials") ? "text-[#7c269b] border-b-2 border-[#7c269b] bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)]" : "hover:text-[#7c269b] hover:border-b-2 border-[#7c269b] hover:bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)]"
+              } font-medium`}>
               Testimonials
-            </a>
+            </button>
           </li>
           <li>
             <a href="#" className="hover:text-[#7c269b] hover:bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)] hover:border-b-2 border-[#7c269b]">
