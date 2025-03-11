@@ -53,21 +53,34 @@ const Nav = () => {
             </button>
           </li>
           <li>
-            <a href="#" className="hover:text-[#7c269b] hover:bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)] hover:border-b-2 border-[#7c269b]">
+            <button 
+              onClick={()=>navigate("/Partners")}
+            className={`${
+              isActive("/Partners") ? "text-[#7c269b] border-b-2 border-[#7c269b] bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)]" : "hover:border-b-2 border-[#7c269b] hover:bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)]"
+            }`}>
               Partners
-            </a>
+
+            </button>
           </li>
           <li>
-            <a href="#" className="hover:text-[#7c269b] hover:bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)] hover:border-b-2 border-[#7c269b]">
+          <button 
+              onClick={()=>navigate("/Whyus")}
+            className={`${
+              isActive("/Whyus") ? "text-[#7c269b] border-b-2 border-[#7c269b] bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)]" : "hover:border-b-2 border-[#7c269b] hover:bg-[radial-gradient(50%_50%_at_50%_50%,#f6dcff_0,rgba(246,220,255,0)_100%)]"
+            }`}>
               Why Us?
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
 
-      <button className="hidden md:block bg-[#7c269b]  text-white px-4 py-2 rounded hover:bg-[#692084]  font-code text-lg text-center  ">
-        Contact Us
-      </button>
+      <button 
+              onClick={()=>navigate("/Contact")}
+            className={`${
+              isActive("/Contact") ? "hidden md:block bg-[#7c269b]  text-white px-4 py-2 rounded hover:bg-[#692084]  font-code text-lg text-center  " : "hidden md:block bg-[#7c269b]  text-white px-4 py-2 rounded hover:bg-[#692084]  font-code text-lg text-center  "
+            }`}>
+              Contact Us
+            </button>
 
      
       <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>

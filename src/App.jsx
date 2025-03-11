@@ -8,6 +8,10 @@ import AllCourses from "./Components/AllCourses";
 import CourseDetails from "./Components/CourseDetails"
 import CoreJava from './Components/CoreJava'
 import Testimonials from './Components/Testimonials'
+import Partners from "./Components/Partners"
+import Whyus from './Components/Whyus'
+import Contact from "./Components/Contact";
+
 
 
 function App() {
@@ -21,6 +25,9 @@ function App() {
         <Route path="/course/:name" element={<CourseDetails />} />
         {/* <Route path="/backend-node" element={<BackendNode />} /> */}
         <Route path="/Testimonials" element={<Testimonials/>}></Route>
+        <Route path="/Partners" element={<Partners />} />
+        <Route path="/Whyus" element={<Whyus />} />
+        <Route path="/Contact" element={<Contact />} />
         <Route path="/core-java" element={<CoreJava />} />
       </Routes>
     </Router>
