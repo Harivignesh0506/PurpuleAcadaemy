@@ -6,7 +6,7 @@ import Thankyou from "./Components/Thankyou";
 import AllCourses from "./Components/AllCourses";
 // import BackendNode from "./Components/BackendNode";
 import CourseDetails from "./Components/CourseDetails"
-import CoreJava from './Components/CoreJava'
+// import CoreJava from './Components/CoreJava'
 import Testimonials from './Components/Testimonials'
 import Partners from "./Components/Partners"
 import Whyus from './Components/Whyus'
@@ -28,7 +28,7 @@ function App() {
         <Route path="/Partners" element={<Partners />} />
         <Route path="/Whyus" element={<Whyus />} />
         <Route path="/Contact" element={<Contact />} />
-        <Route path="/core-java" element={<CoreJava />} />
+        {/* <Route path="/core-java" element={<CoreJava />} /> */}
       </Routes>
     </Router>
   );
