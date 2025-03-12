@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import Header from './Header'
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import courseimg from '../Asstes/courseBg.svg'
 import { FaCalendarAlt } from "react-icons/fa";
 import imgApprochu from '../Asstes/training.webp'
@@ -16,13 +16,17 @@ import "slick-carousel/slick/slick-theme.css";
 import VideoSlider from './VideoSlider';
 import Frequency from './Frequency';
 import Footer from './Footer'
+import Course from "../Course.json";
 // import homeimg from '../Asstes/homeBannerBg.png'
 
 
-const Dash = () => {
+const Dash = ({courseName}) => {
 
   const navigate = useNavigate();
-    const [fromData,setFormData]=useState({name:"",email:"",mobileNumber:"",coursePreference:"",})
+  const location = useLocation();
+    const [fromData,setFormData]=useState({name:"",email:"",mobileNumber:"",coursePreference:"",});
+    
+    const isActive =(path)=> location.pathname === path
     
     const handleChange = (e) =>{
         setFormData({...fromData,[e.target.name]:e.target.value})
@@ -130,6 +134,7 @@ const Dash = () => {
                   Join our Courses
                   </button>
                   <button 
+                  onClick={()=>navigate("/all-courses")}
                 type='submit'
                  className='font-code text-lg border-2 border-[#7c269b]  text-black px-4 py-2 rounded-lg hover:bg-[#692084] hover:text-white hover:border-none sm:w-auto'>
                   See all Courses
@@ -224,16 +229,21 @@ const Dash = () => {
        <div className='border w-full sm:w-[400px] p-5 leading-10 rounded-xl shadow-lg '>
          <h4 className='font-ubuntu font-bold text-2xl'>{upcoming.name}</h4>
          <p className='flex gap-1 items-center' ><FaCalendarAlt className='text-[#7c269b]' />{upcoming.date}</p>
-         <button 
-                type='submit'
-                 className='font-code bg-[#7c269b] text-white px-4 mt-2 rounded-lg hover:bg-[#692084] w-full sm:w-44'>
-                  View details
-                  </button>
+         <button
+    type='button'
+    onClick={() => navigate(`/course/${upcoming.name.toLowerCase().replace(/\s+/g, '-')}`)}
+    className='font-code bg-[#7c269b] text-white px-4 mt-2 rounded-lg hover:bg-[#692084] w-full sm:w-44'
+>
+    View details
+</button>
+
           {/* <img src={upcoming.img} alt="" className='' /> */}
        </div>
       ))}
        
-       <div className='border w-full sm:w-[400px] p-5 rounded-xl shadow-lg flex justify-center items-center '>
+       <div
+       onClick={()=>navigate("/all-courses")}
+       className='border w-full sm:w-[400px] p-5 rounded-xl shadow-lg flex justify-center items-center '>
          <h4 className='font-ubuntu font-bold text-2x text-[#7c269b] border-b-2 border-[#7c269b] cursor-pointer'>View All Courses</h4>
          
        </div>
