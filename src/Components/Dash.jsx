@@ -20,7 +20,7 @@ import Course from "../Course.json";
 // import homeimg from '../Asstes/homeBannerBg.png'
 
 
-const Dash = ({courseName}) => {
+const Dash = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -64,25 +64,13 @@ const Dash = ({courseName}) => {
       "UI / UX",
     ];
 
-  const config = {
-   upcoming: [
-        {
-          name:"Backend (Node js)",
-          date:"30th September 2024",
-          link:"#",
-          img:{courseimg},
-        },
-        {
-          name:"Frontend (React js)",
-          date:"22th September 2024",
-          link:"#",
-          img:{courseimg},
-        },
-       
-
-   ],
-    
-  };
+    const config = {
+      upcoming: [
+        { name: "Backend (Node.js)", date: "30th September 2024", link: "#", img: courseimg },
+        { name: "Frontend (React.js)", date: "22nd September 2024", link: "#", img: courseimg }
+      ]
+    };
+  
 
   const training ={
     content: [
@@ -116,6 +104,7 @@ const Dash = ({courseName}) => {
   // Card slider
  
   
+  
 
   return (
     <section className=' font-sans text-lg w-full h-screen  bg-homeimg  bg-center bg-no-repeat  '>
@@ -129,6 +118,7 @@ const Dash = ({courseName}) => {
             <p>Boost your <span className='font-bold'> IT journey </span> by joining our comprehensive courses</p>
             <div className='flex gap-3flex flex-col sm:flex-row gap-3 mt-6'>
             <button 
+                onClick={()=>navigate("/contact")}
                 type='submit'
                  className='font-code text-lg bg-[#7c269b] text-white px-4 py-2 rounded-lg hover:bg-[#692084]  hover:text-white w-full sm:w-auto'>
                   Join our Courses
@@ -231,11 +221,12 @@ const Dash = ({courseName}) => {
          <p className='flex gap-1 items-center' ><FaCalendarAlt className='text-[#7c269b]' />{upcoming.date}</p>
          <button
     type='button'
-    onClick={() => navigate(`/course/${upcoming.name.toLowerCase().replace(/\s+/g, '-')}`)}
+    onClick={() => navigate(`/course/${upcoming.name.replace(/\s+/g, "-").replace(/[()]/g, "").toLowerCase()}`)}
     className='font-code bg-[#7c269b] text-white px-4 mt-2 rounded-lg hover:bg-[#692084] w-full sm:w-44'
 >
     View details
 </button>
+
 
           {/* <img src={upcoming.img} alt="" className='' /> */}
        </div>
@@ -300,7 +291,9 @@ const Dash = ({courseName}) => {
  <h3 className='font-ubuntu text-5xl text-white font-bold'>Still have questions?</h3>
   <p className='text-white font-normal text-lg'>Can't find the answers you're looking for? Please feel free to chat with our team</p>
 
-<button className=' m-auto w-[160px] text-[#7c269b]  bg-white px-4 py-2 rounded  text-lg font-code '>
+<button
+onClick={()=>navigate("/contact")}
+className=' m-auto w-[160px] text-[#7c269b]  bg-white px-4 py-2 rounded  text-lg font-code '>
   Contact Us
 </button>
 

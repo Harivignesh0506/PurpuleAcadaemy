@@ -12,6 +12,9 @@
 
     const CourseDetail = () => {
       const { name } = useParams();
+      const decodedName = decodeURIComponent(name);
+
+      const normalize = (str) => str.replace(/\s+/g, "-").replace(/[()]/g, "").toLowerCase();
 
       const navigate = useNavigate();
       const [fromData,setFormData]=useState({name:"",email:"",mobileNumber:"",coursePreference:"",})
@@ -93,11 +96,9 @@
 
       // Find the course that matches the URL
       const selectedCourse = Course.find(
-        (c) => c.name.replace(/\s+/g, "-").toLowerCase() === name
-        
-        
-      );
-
+        (c) => normalize(c.name) === normalize(decodedName)
+    );
+      
       if (!selectedCourse) {
         return <p className="text-2xl text-center">Course not found!</p>;
       }
