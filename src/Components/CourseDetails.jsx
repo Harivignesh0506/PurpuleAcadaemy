@@ -12,9 +12,16 @@
 
     const CourseDetail = () => {
       const { name } = useParams();
+      console.log("Course name from URL:", name); 
       const decodedName = decodeURIComponent(name);
 
-      const normalize = (str) => str.replace(/\s+/g, "-").replace(/[()]/g, "").toLowerCase();
+      const normalize = (str) =>
+        str
+            .trim()
+            .replace(/\s+/g, "-") // Convert spaces to dashes
+            .replace(/\./g, "")    // Remove dots (.) to prevent unwanted formatting
+            .toLowerCase();
+    
 
       const navigate = useNavigate();
       const [fromData,setFormData]=useState({name:"",email:"",mobileNumber:"",coursePreference:"",})
@@ -95,17 +102,17 @@
       const [selectedTopic, setSelectedTopic] = useState(topics[0]); 
 
       // Find the course that matches the URL
-      const selectedCourse = Course.find(
-        (c) => normalize(c.name) === normalize(decodedName)
-    );
-      
-      if (!selectedCourse) {
-        return <p className="text-2xl text-center">Course not found!</p>;
-      }
+      const normalizedName = normalize(decodeURIComponent(name));
+
+const selectedCourse = Course.find((c) => normalize(c.name) === normalizedName);
+
+if (!selectedCourse) {
+    return <p className="text-2xl text-center">Course not found!</p>;
+}
 
       return (
-        <section className="container mx-auto">
-        <div>
+        <section className="">
+        <div className="">
         <div>
             {/* Course Header */}
             <div className="bg-[#F2E9F5] font-ubuntu h-[500px] px-10 flex flex-col justify-center leading-10">
@@ -289,9 +296,10 @@
       </div>
           </div>
 
-          <Footer />
+          
 
                 </div>
+                <Footer />
         </section>
       );
     };

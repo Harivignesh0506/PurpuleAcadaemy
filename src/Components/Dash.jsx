@@ -103,7 +103,13 @@ const Dash = () => {
 
   // Card slider
  
-  
+  const normalize = (str) =>
+    str
+        .trim()
+        .replace(/\s+/g, "-") // Convert spaces to dashes
+        .replace(/\./g, "")    // Remove dots (.) to prevent unwanted formatting
+        .toLowerCase();
+
   
 
   return (
@@ -220,9 +226,9 @@ const Dash = () => {
          <h4 className='font-ubuntu font-bold text-2xl'>{upcoming.name}</h4>
          <p className='flex gap-1 items-center' ><FaCalendarAlt className='text-[#7c269b]' />{upcoming.date}</p>
          <button
-    type='button'
-    onClick={() => navigate(`/course/${upcoming.name.replace(/\s+/g, "-").replace(/[()]/g, "").toLowerCase()}`)}
-    className='font-code bg-[#7c269b] text-white px-4 mt-2 rounded-lg hover:bg-[#692084] w-full sm:w-44'
+    type="button"
+    onClick={() => navigate(`/course/${normalize(upcoming.name)}`)}
+    className="font-code bg-[#7c269b] text-white px-4 mt-2 rounded-lg hover:bg-[#692084] w-full sm:w-44"
 >
     View details
 </button>
