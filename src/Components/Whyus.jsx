@@ -104,7 +104,7 @@ const PrevSilde =()=>{
       {/* Right Arrow */}
       <button
         onClick={nextSilde}
-        className="  right-5 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg"
+        className="ml-2 right-5 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg"
       >
         <FaArrowRight size={20} />
       </button>
