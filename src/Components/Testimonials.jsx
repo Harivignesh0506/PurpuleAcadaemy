@@ -59,13 +59,13 @@ const Testimonials = () => {
         </div>
       {/* video div */}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-[100px]">
+          <div className=" grid grid-cols-1 md:grid-cols-3 gap-4 p-[100px]  ">
               {videoData.map((d,i)=>(
-                <div className="relative group overflow-hidden rounded-lg shadow-lg ">
+                <div className="relative  group overflow-hidden rounded-lg shadow-lg">
                     <video
               ref={(el) => (videoRefs.current[i] = el)}
               src={d.videoUrl}
-              className="w-full rounded-lg shadow-lg"
+              className="w-full  rounded-lg shadow-lg"
             />
                  
                    <button className="absolute inset-0 flex items-center justify-center text-white text-3xl bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity"

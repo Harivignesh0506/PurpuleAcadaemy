@@ -122,7 +122,7 @@ const Dash = () => {
       <div className=' w-full md:w-[600px] text-center md:text-left leading-4.125'>
             <h3 className= 'font-bold  font-ubuntu text-3xl md:text-5xl '>Set yourself apart by learning the skills that actually matter!</h3>
             <p>Boost your <span className='font-bold'> IT journey </span> by joining our comprehensive courses</p>
-            <div className='flex gap-3flex flex-col sm:flex-row gap-3 mt-6'>
+            <div className='flex gap-3flex flex-col md:justify-start sm:flex-row gap-3 mt-6 sm:justify-center'>
             <button 
                 onClick={()=>navigate("/contact")}
                 type='submit'
@@ -251,8 +251,8 @@ const Dash = () => {
     {/* Approach Training Section */}
 
     <div className='mt-24 px-4 md:px-10 lg:px-24 flex flex-col md:flex-row gap-10'>
-      <div>
-        <img src={imgApprochu} alt="img Approach" className='w-[500px] h-[600px]' />
+      <div className='ml-20'>
+        <img src={imgApprochu} alt="img Approach" className='w-[500px]  h-[600px]' />
       </div>
       <div className='text-center  md:text-left'>
         <h3 className='mb-5 font-ubuntu font-bold text-2xl md:text-3xl max-w-full md:max-w-[500px]'>The 

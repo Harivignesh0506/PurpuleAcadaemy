@@ -74,7 +74,7 @@ const Contact = () => {
                 <h2 className='text-[#7c269b] font-bold text-5xl font-ubuntu text-center mt-5'>Contact Us</h2>
                 <h4 className='font-bold text-center text-2xl'>We’d love to hear from you</h4>
             </div>
-            <div className='flex p-14 px-24 gap-5'>
+            <div className='grid grid-cols-1 p-14 px-24 gap-5 md:grid-cols-3'>
                  {Contact.map((d,i)=>(
                     <div key={i} className=' border w-full p-10 text-center flex flex-col justify-center items-center py-14 rounded-lg shadow-lg'>
                         <p className='text-[#7c269b] font-bold text-4xl'>{d.logo}</p>
